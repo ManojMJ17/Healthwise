@@ -9,3 +9,14 @@ export const registerUser = async (userData) => {
 export const loginUser = async (credentials) => {
   return await axios.post(`${API_BASE_URL}/login/`, credentials);
 };
+
+export const fetchUserDetails = async () => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/user-details/`, { withCredentials: true });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching user details:", error.response?.data || error.message);
+    throw error;
+  }
+};
+

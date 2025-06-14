@@ -8,3 +8,10 @@ body {
   background: #0f1a24;
   color: white;
 }
+.input-style {
+  width: 50%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}

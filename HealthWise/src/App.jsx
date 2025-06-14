@@ -4,6 +4,7 @@ import "./globals.css";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import Home from "./pages/Home";
+import ProfilePage from "./pages/ProfilePage"
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/profile" element={<ProfilePage />} />
           </Routes>
         </Router>
       </div>

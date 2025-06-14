@@ -1,5 +1,6 @@
 import { Globe, Search, UserRound } from "lucide-react";
 import { useLocation } from "react-router-dom";
+import ProfileMenu from "./ProfileMenu";
 const Navbar = ({ links }) => {
   const location = useLocation();
 
@@ -49,7 +50,7 @@ const Navbar = ({ links }) => {
               <Globe size={20} />
             </div>
             <div className="grey w-10 h-10 rounded-[50%] flex justify-center items-center cursor-pointer">
-              <UserRound />
+              <ProfileMenu />
             </div>
           </div>
         )}

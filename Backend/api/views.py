@@ -29,3 +29,18 @@ def login(request):
         return Response({'message': 'Login successful', 'fullname': user.fullname, 'email': user.email}, status=200)  # ✅ Return user data
     return Response({'error': 'Invalid credentials'}, status=400)
 
+@api_view(['GET'])
+def user_details(request):
+    if request.user.is_authenticated:
+        user = request.user
+        return Response({
+            'name': user.username,
+            'email': user.email,
+            'age': user.profile.age,
+            'gender': user.profile.gender,
+            'dosha_type': user.profile.dosha_type,
+            'weight': user.profile.weight,
+            'height': user.profile.height,
+            'blood_pressure': user.profile.blood_pressure,
+        })
+    return Response({'error': 'User not authenticated'}, status=401)
