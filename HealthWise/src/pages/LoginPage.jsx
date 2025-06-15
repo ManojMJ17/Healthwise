@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { loginUser } from '../api';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
-
 const LoginPage = () => {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
 
@@ -11,9 +10,14 @@ const LoginPage = () => {
   };
 
   const handleSubmit = async (e) => {
+    if (!credentials.email || !credentials.password) {
+      alert("Both email and password are required");
+      return;
+    }
     e.preventDefault();
 
     try {
+      console.log("Sending credentials:", credentials);
       const response = await loginUser(credentials);
       console.log(response.data); // ✅ Check backend response in console
 
